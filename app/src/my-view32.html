@@ -1,0 +1,94 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../bower_components/vaadin-material-theme/vaadin-grid.html">
+<link rel="import" href="../bower_components/vaadin-grid/vaadin-grid.html">
+
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-view32">
+	<template>
+		 <style include="shared-styles">
+			:host {
+				display: block;
+
+				padding: 10px;
+			}
+		</style>
+
+		<!-- Fetch an array of bars to be shown in the grid -->
+		<iron-ajax auto 
+			url="/api/serve/get/{{barName}}" 
+			handle-as="json" 
+			last-response="{{serves}}"></iron-ajax>
+
+		<iron-ajax auto 
+			url="/api/bar/all" 
+			handle-as="json" 
+			last-response="{{bars}}"></iron-ajax>
+		<div class="card">
+			<paper-dropdown-menu label="Bars" 
+				value="{{barName}}">
+				<paper-listbox slot="dropdown-content" 
+					selected="0" >
+					<template is="dom-repeat" 
+						items="[[bars]]">
+						<paper-item>[[item.barName]]</paper-item>
+					</template>
+				</paper-listbox>
+			</paper-dropdown-menu>
+
+			<!-- The array is set as the <vaadin-grid>'s "items" property -->
+			<vaadin-grid aria-label="Basic Binding Example" 
+				items="[[serves]]">
+
+				<vaadin-grid-column width="50px" 
+					flex-grow="0">
+					<template class="header">#</template>
+					<template>[[index]]</template>
+					<!-- If necessary, the footer could be set using <template class="footer"> -->
+					<template class="footer">#</template>
+				</vaadin-grid-column>
+
+				<vaadin-grid-column>
+					<template class="header">Bar Name</template>
+					<template>[[item.barBarName]]</template>
+					<template class="footer">Bar Name</template>
+				</vaadin-grid-column>
+
+				<vaadin-grid-column>
+					<template class="header">Beer Name</template>
+					<template>[[item.beerBeerName]]</template>
+					<template class="footer">Beer Name</template>
+				</vaadin-grid-column>
+
+				<vaadin-grid-column>
+					<template class="header">Price</template>
+					<template>[[item.price]]</template>
+					<template class="footer">Price</template>
+				</vaadin-grid-column>
+			</vaadin-grid>
+
+		</div>
+	</template>
+
+	<script>
+		class MyView32 extends Polymer.Element {
+			static get is() { return 'my-view32'; }
+		}
+
+		window.customElements.define(MyView32.is, MyView32);
+	</script>
+</dom-module>
