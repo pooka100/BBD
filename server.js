@@ -6,7 +6,7 @@ bodyParser = require('body-parser'),
 server = require('http').createServer(app),
 Sequelize = require('sequelize')
 
-const sequelize = new Sequelize('HW3', 'root', 'qwertyuiop', {
+const sequelize = new Sequelize('mydb', 'root', 'qwertyuiop', {
   host: 'localhost',
   dialect: 'mysql',
 
