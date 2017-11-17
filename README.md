@@ -12,16 +12,16 @@ It uses express framework along with sequelize to connect to MySQL database.
 
 You can find details of different libraries used in NodeJS
 
-..* [Express](https://expressjs.com/)
-..* [Sequelize](http://docs.sequelizejs.com/)
+* [Express](https://expressjs.com/)
+* [Sequelize](http://docs.sequelizejs.com/)
 
 ## Front-end 
 Used [Polymer](https://www.polymer-project.org/2.0/start/) for UI, which is based on a methodology of web elements.
 
 You can find details of the elements used in the Polymer at
 
-..* [Vaadin Grid](https://vaadin.com/elements/vaadin-grid/html-examples/grid-basic-demos)
-..* [Default Polymer Elements](https://www.webcomponents.org/collection/Polymer/elements)
+* [Vaadin Grid](https://vaadin.com/elements/vaadin-grid/html-examples/grid-basic-demos)
+* [Default Polymer Elements](https://www.webcomponents.org/collection/Polymer/elements)
 
 ## How to run this code
 
