@@ -15,6 +15,9 @@ You can find details of different libraries used in NodeJS
 * [Express](https://expressjs.com/)
 * [Sequelize](http://docs.sequelizejs.com/)
 
+### Disclaimer
+You'll have to use a Non-ORM library for your projects.
+
 ## Front-end 
 Used [Polymer](https://www.polymer-project.org/2.0/start/) for UI, which is based on a methodology of web elements.
 
