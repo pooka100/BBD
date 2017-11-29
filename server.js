@@ -6,8 +6,8 @@ bodyParser = require('body-parser'),
 server = require('http').createServer(app),
 Sequelize = require('sequelize')
 
-const sequelize = new Sequelize('mydb', 'root', 'qwertyuiop', {
-  host: 'localhost',
+const sequelize = new Sequelize('BBD', 'master', 'longJohnbronze75', {
+  host: 'bbd.chbunwhrksgq.us-east-2.rds.amazonaws.com',
   dialect: 'mysql',
 
   pool: {

@@ -35,7 +35,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template>
     <style>
       :host {
-        --app-primary-color: #4285f4;
+        /*--app-primary-color: #4285f4;*/
+        --app-primary-color: brown;
         --app-secondary-color: black;
 
         display: block;
@@ -47,6 +48,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       app-header {
         color: #fff;
+        
         background-color: var(--app-primary-color);
       }
 
@@ -70,6 +72,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         color: black;
         font-weight: bold;
       }
+
+
     </style>
 
     <app-location
@@ -106,7 +110,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <app-header slot="header" condenses reveals effects="waterfall">
           <app-toolbar>
             <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
-            <div main-title>Bar-Beer-NoDrinker</div>
+            <div main-title>Beer of The Month Club!</div>
           </app-toolbar>
         </app-header>
 
