@@ -1,6 +1,6 @@
 module.exports = function(app, sequelize) {
 
-    var models = require("./models/models.server")(sequelize);
+    var models = "hi"
 
     require("./services/services.server.js")(app, models, sequelize);
     

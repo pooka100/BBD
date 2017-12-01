@@ -4,16 +4,7 @@
   "fragments": [
     "src/my-view1.html",
     "src/my-view11.html",
-    "src/my-view2.html",
-    "src/my-view21.html",
-    "src/my-view3.html",
-    "src/my-view31.html",
-    "src/my-view32.html",
-    "src/my-view404.html",
-    "src/my-LUS.html",
-    "src/my-CS.html",
-    "src/my-LOP.html",
-    "src/my-QDB.html",    
+    "src/my-view404.html"
   ],
   "sources": [
     "src/**/*",
