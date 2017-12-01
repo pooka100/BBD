@@ -9,7 +9,11 @@
     "src/my-view3.html",
     "src/my-view31.html",
     "src/my-view32.html",
-    "src/my-view404.html"
+    "src/my-view404.html",
+    "src/my-LUS.html",
+    "src/my-CS.html",
+    "src/my-LOP.html",
+    "src/my-QDB.html",    
   ],
   "sources": [
     "src/**/*",

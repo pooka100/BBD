@@ -31,8 +31,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="lazy-import" href="my-view32.html">
 <link rel="lazy-import" href="my-view404.html">
 
+
 <dom-module id="my-app">
+
   <template>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
       :host {
         /*--app-primary-color: #4285f4;*/
@@ -73,6 +84,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         font-weight: bold;
       }
 
+      .iron-selected a{
+        color: black;
+        font-weight: bold;
+      }
+      .testerino {
+        font-weight: bold;
+      }
 
     </style>
 
@@ -94,13 +112,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
         <app-toolbar>Menu</app-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="view1" href="[[rootPath]]/#/view1">Bars</a>
-          <a name="view11" href="[[rootPath]]/#/view11">&emsp;Create Bars</a>
-          <a name="view2" href="[[rootPath]]/#/view2">Beers</a>
-          <a name="view21" href="[[rootPath]]/#/view21">&emsp;Create Beers</a>
-          <a name="view3" href="[[rootPath]]/#/view3">Serves</a>
-          <a name="view31" href="[[rootPath]]/#/view31">&emsp;Create Serves</a>
-          <a name="view32" href="[[rootPath]]/#/view32">&emsp;Find Serves</a>
+          <a class="panel-body" name="view11" href="[[rootPath]]/#/view11">Create Schedule</a>
+          <a class="panel-heading" name="view1" href="[[rootPath]]/#/view1">Directly Query</a>
         </iron-selector>
       </app-drawer>
 
@@ -127,12 +140,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <my-view31 name="view31"></my-view31>
           <my-view32 name="view32"></my-view32>
           <my-view404 name="view404"></my-view404>
+          <my-CS name="LUS"></my-CS>
+          <my-CS name="LOP"></my-CS>
+          <my-CS name="QDB"></my-CS>
+          <my-CS name="CS"></my-CS>
+          
         </iron-pages>
+        <!-- <iron-pages
+            selected="view1"
+            attr-for-selected="name"
+            fallback-selection="view404"
+            role="main">
+        </iron-pages> -->
+
       </app-header-layout>
     </app-drawer-layout>
   </template>
 
   <script>
+
     class MyApp extends Polymer.Element {
       static get is() { return 'my-app'; }
 
@@ -160,7 +186,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       _routePageChanged(page) {
         // If no page was found in the route data, page will be an empty string.
         // Default to 'view1' in that case.
-        this.page = page || 'view1';
+        this.page = page || 'view11';
 
         // Close a non-persistent drawer when the page & route are changed.
         if (!this.$.drawer.persistent) {
@@ -169,6 +195,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       _pageChanged(page) {
+        
         // Load page import on demand. Show 404 page if fails
         var resolvedPageUrl = this.resolveUrl('my-' + page + '.html');
         Polymer.importHref(
@@ -184,5 +211,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
 
     window.customElements.define(MyApp.is, MyApp);
+  </script>
+  <script>
+    
+    $(".panel-heading").click(function(){
+      window.alert("tree");
+      $(".panel-heading,.panel-body").removeClass("testerino");
+      $(this).addClass("testerino");
+    });
   </script>
 </dom-module>

@@ -31,6 +31,7 @@ module.exports = function(barProject) {
 		return barProject.findAll().then(bars => {
 		  	return bars;
 		})
+		//return barProject;
 	}
 
 	function createBar(bar) {

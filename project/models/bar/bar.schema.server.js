@@ -1,6 +1,6 @@
 module.exports = function(sequelize) {
 
-	Sequelize = require('sequelize')
+	Sequelize = require('sequelize');
 
 	var BarSchemaProject = sequelize.define('bar', {
 		barName: {
@@ -9,6 +9,11 @@ module.exports = function(sequelize) {
 		},
 		barAddress: Sequelize.STRING
 	});
+
+	/*var BarSchemaProject = sequelize.query("SELECT _Name, Address FROM Bars"
+	, { type: sequelize.QueryTypes.SELECT}).then(Bars => {
+		return Bars;
+	})*/
 	
 	return BarSchemaProject;
 };
